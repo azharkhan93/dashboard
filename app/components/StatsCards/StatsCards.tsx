@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 
-
-
 const cardsData = [
     { heading: '23K', paragraph: 'Total Views', svg: <svg width="67" height="59" viewBox="0 0 67 59" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="67" height="58.8169" rx="5" fill="white" fillOpacity="0.23"/>
@@ -38,8 +36,7 @@ const CardContainer3 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-   gap: 7px;
+  gap: 6px;
   width: 220px;
   height: 100px;
   background-color: black;

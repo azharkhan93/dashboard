@@ -31,7 +31,7 @@ const Container = styled.div`
 `;
 
 const TextContainer = styled.div`
-  flex-grow: 1; /* Allow text container to grow and take available space */
+  flex-grow: 1; 
 `;
 
 const Heading = styled.h1`

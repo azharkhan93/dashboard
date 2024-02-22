@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { HelloWorld } from '../CustomConatiner/components/HelloWorld';
+
 const SidebarContainer = styled.div`
 width: 220px;
 height: 100vh;
@@ -9,38 +10,65 @@ background-color: grey;
 display: flex;
 flex-direction: column;
 align-items: center;
+// justify-content: flex-start;
 justify-content: center;
 gap: 30px;
 
-@media (max-width: 768px) {
-  display: none; 
-  height: 130vh;
-  // background-color: green;
-  // height: 1px;
+ @media (max-width: 768px) {
+   display: ${(props: { isOpen: any; }) => (props.isOpen ? 'block' : 'none')};
+  //  width: 160px;
+  //  gap: 10px;
 }
-  // @media (max-width: 768px) {
-  //   display: ${(props: { isOpen: any; }) => (props.isOpen ? 'block' : 'none')};
 `;
+const HamburgerMenu = styled.div`
+  display: none;
+  cursor: pointer;
+  color: green;
+  z-index: 5;
+  width: 100%;
+  height: 70px; /* Set height according to your design */
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: green;
+    height: 70px; 
+    width: 80px;
+`;
+// const HamburgerMenu = styled.div`
+//   display: none; 
+//   cursor: pointer;
+//   color: green;
+//   z-index: 5;
+
+
+//   @media (max-width: 768px) {
+//     display: block; 
+//     background-color: green;
+//     height: 1px;
+//   }
+// `;
+
 const SvgWrapper1 = styled.div`
   display: none; 
   cursor: pointer;
   color: green;
   // z-index: 5;
 
-
-  @media (max-width: 768px) {
-    display: block; 
-    background-color: green;
-    height: 1px;
-  }
 `;
 const SvgWrapper = styled.div`
   width: 70px; 
   height: 70px; 
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 const EmailText = styled.p`
-  font-size: 14px; 
+  font-size: 15px; 
   color: white; 
 `;
 
@@ -48,20 +76,49 @@ const BottomCircle = styled.div`
 
   width: 70px;
   height: 70px;
+  
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  
 `;
 
 
 
 export const SideBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
-    <SvgWrapper1 >
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 50 50" fill="green">
-          <path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
+    
+    <HamburgerMenu onClick={toggleSidebar}>
+      
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 6H20M4 12H20M4 18H20"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
-      </SvgWrapper1>
-    <SidebarContainer >
+      </HamburgerMenu>
+    
+
+    <SidebarContainer isOpen={isOpen} >
+    
     <SvgWrapper>
           <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="50" fill="white" fillOpacity="0.19" />
