@@ -74,7 +74,7 @@ const UserIcon = styled.div`
 
 const WhiteHeading = styled.h1`
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   @media (max-width: 768px) {
     font-size: 14px;
   }

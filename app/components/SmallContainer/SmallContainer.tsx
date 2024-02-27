@@ -4,8 +4,9 @@ import { Cards } from './components/Cards';
 
 const SmallDashboardContainer = styled.div`
   position: relative;
-  height: 65vh; 
-  width: 97%; 
+  // min-height: 650px;
+  height: 70vh; 
+  width: 79vw; 
   background: #000000;
    border-radius: 30px;
    margin: 0 auto;

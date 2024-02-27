@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { HelloWorld } from '../CustomConatiner/components/HelloWorld';
 
 const SidebarContainer = styled.div`
-width: 220px;
+width: 18%;
 height: 100vh;
 background-color: grey;
 display: flex;
@@ -35,6 +35,7 @@ const HamburgerMenu = styled.div`
     // background-color: green;
     height: 70px; 
     width: 80px;
+  }
 `;
 // const HamburgerMenu = styled.div`
 //   display: none; 
