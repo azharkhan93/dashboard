@@ -3,11 +3,8 @@
 import styled from 'styled-components';
 import { Box } from '../components/styled/Box.styled';
 import { Headings } from '../components/styled/Headings.styled';
-
-import { Buttons } from '../components/styled/Buttons.styled';
 import { PricingCards } from '../components';
-
-
+import { Col } from '../components/styled/Col.styled';
 
 const DashboardContainer = styled(Box)`
   
@@ -24,7 +21,6 @@ const SmallConatiner = styled(Box)`
   }
   
 `;
-
 
 const Container = styled(Box)`
 position: relative;
@@ -43,7 +39,7 @@ top: 0;
 right: 0;
 `;
 
-const MainDiv = styled(Box)`
+const MainDiv = styled(Col)`
 
 border: 3px solid #48484866;
 flex-direction: column;
@@ -96,7 +92,7 @@ const SVG = styled.svg`
 `;
 
 const Text = styled.p`
-  font-size: 11px;
+  font-size: 16px;
   font-weight: bold;
 `;
 
@@ -125,11 +121,59 @@ const Divider = styled.hr`
 `;
 
 const AdditionalText = styled.p`
-  font-size: 30px;
+  font-size: 33px;
   font-weight: bold;
 
 `;
+const Container5 = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-direction: row; */
+  align-items: center;
+  
+  width: 30vw;
+  gap: 12px;
+  /* margin-right: 30px; */
+  background: yellow;
+  margin: auto;
+`;
 
+const Data = styled.div`
+height: 9vh;
+/* width: 40vw; */
+
+gap: 10px;
+  /* margin: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+`;
+
+const Svg = styled.svg`
+  width: 20px;
+  height: 18px;
+`;
+
+const data = [
+    {
+      text: '1 TB of Space',
+    },
+    {
+      text: 'Free SSL Certificate',
+    },
+    {
+      text: 'Useful for Teams',
+    },
+    {
+      text: 'Grammar Checker', 
+    },
+  ];
+
+
+  export { DashboardContainer };
 
 
 const page = () => {
@@ -192,6 +236,7 @@ const page = () => {
         white"
         overflow="hidden"
         borderradius="10px"
+        flex-direction = "column"
         >
 
             <InnerDiv>
@@ -215,10 +260,26 @@ const page = () => {
     <Divider />
     <AdditionalText>$520/mo</AdditionalText>
 
+    <Container5>
+      {data.map((item, index) => (
+        <Data key={index}>
+          <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" fill="none">
+            <circle cx="12.5" cy="12.5" r="12.5" fill="#6DD26D" />
+            <circle cx="12.5" cy="12.5" r="10" stroke="#484848" strokeOpacity="0.1" strokeWidth="5" />
+            <path
+              d="M7 13L10.5 16.5L17.5 9"
+              stroke="white"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </Svg>
+          <p>{item.text}</p>
+        </Data>
+      ))}
+    </Container5>
 
-    
-                
-            </InnerDiv>
+ </InnerDiv>
 
 
 
@@ -233,6 +294,7 @@ const page = () => {
       </ButtonsWrapper>
       
     </Container2>
+    
     <PricingCards/>
     
 

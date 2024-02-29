@@ -1,17 +1,10 @@
 "use client"
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
+
 import styled from 'styled-components';
 import { Box } from '../components/styled/Box.styled';
 import { Headings } from '../components/styled/Headings.styled';
-// import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import "../globals.css"
+import { ArticlesSection } from '../components';
 import { Buttons } from '../components/styled/Buttons.styled';
-
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
-
-
 
 
 
@@ -40,19 +33,25 @@ position: relative;
     width: 98vh; */
   }
   `;
-  
-  const CenteredButton = styled(Buttons)`
-  
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 40px;
+
+const CenteredButton = styled.div`
+
+width: ${(props) => props.width || "10vw"};
+  background: ${(props) => props.background || "#484848"};
+  border-radius: ${(props) => props.borderradius || "10px"};
+  font-size: ${(props) => props.fontSize || "14px"};
+  padding: ${(props) => props.padding || "8px 20px"};
+  cursor: ${(props) => props.cursorPointer || "pointer"};
+  text-align: ${(props) => props.textAlign || "center"};
+/* width: 10vw
+padding: 8px 40px;
   background-color: #484848; 
   color: #fff; 
   
   border-radius: 10px;
   cursor: pointer;
-  font-size: 16px; */
+  font-size: 16px;
+  text-align: center; */
 `;
 
 const SvgContainer = styled(Headings)`
@@ -60,28 +59,18 @@ position: absolute;
 top: 0;
 right: 0;
 `;
-const Button1 = styled.button`
-  margin-top: auto; 
-  padding: 10px 20px;
-  color: #fff; 
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  
-`;
 
 
-const MainDiv = styled.div`
-position: relative;
+const MainDiv = styled(Box)`
+/* position: relative;
 display: flex;
-justify-content: space-between;
-/* border: 3px solid #48484866; */
-
+justify-content: center;
 align-items: center;
-height: 80vh;
+height: 87vh;
 width: 87vw;
-background: #E6E6E6;
+background: #E6E6E6; */
 margin: auto;
+gap: 6%;
 
 @media (max-width: 767px) {
   flex-direction: column;
@@ -91,13 +80,7 @@ margin: auto;
   }
 
 `;
-// const QuillContainer = styled.div`
-//   height: 300px; 
-//   width: 80%; 
-//   margin: auto; 
-//   margin-top: 20px; 
-  
-// `;
+
 const LeftDiv = styled.div`
  display: flex;
   flex-direction: column;
@@ -118,36 +101,18 @@ const LeftDiv = styled.div`
   }
 `;
 
-const RightDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;
-  width: 20vw;
-  background-color: white;
-  border: 2px solid red;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  gap: 2%;
-
-  @media (max-width: 767px) {
- width: 80vw;
-  }
-   
-   `;
-   const CenteredContainer = styled.div`
-   margin-top: auto;
+const CenteredContainer = styled.div`
+ 
 
    display: flex;
    align-items: end;
    justify-content: end;
-   height: 7vh; 
-   width: 60vw; 
-   background: white;
-   gap: 10px;
-   top: 30px;
+   flex-direction: column;
+   /* height: 7vh;  */
+   /* width: 30vw;  */
+   /* background: white; */
+   gap: 20px;
+   /* top: 30px; */
 
   
  `;
@@ -156,31 +121,8 @@ const RightDiv = styled.div`
 
 
 
-
 const page = () => {
-  const [localQuillContent, setLocalQuillContent] = useState('');
-  const placeholder = 'Start Writing...';
 
-  const handleQuillChange = (content: any) => {
-    setLocalQuillContent(content);
-  };
-  const modules = {
-    toolbar: [
-      [{ 'header': [1, 2, 3, 4, 5, 6] }], 
-      ['bold', 'italic'],
-      ['blockquote', 'code-block'],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-      // [{ 'script': 'sub' }, { 'script': 'super' }],
-      ['link', 'image'],
-      // ['custom-preview', 'custom-button'],
-      // ['custom-heading-paragraph', 'custom-new-line'],
-      // [{ 'align': [] }], 
-      // ['custom-button'],
-      ['clean'] 
-      
-     
-    ]
-  };
   return (
     <DashboardContainer
       height="100vh"
@@ -214,7 +156,7 @@ const page = () => {
         >
           <Headings flexGrow={1}>
             <Headings fontHeading="24px" textColor="black">
-            Post Articles
+              Post Articles
             </Headings>
 
             <Headings fontHeading="22px" textColor="black" >Create a post just by Drag & Drop elements</Headings>
@@ -228,86 +170,42 @@ const page = () => {
 
 
         </Container>
-        <MainDiv>
+        <MainDiv
+        height= "87vh"
+        width = "87vw"
+        display = "flex"
+        alignItems = "center"
+        justifyContent = "center"
+        position = "relative"
+        background = "#E6E6E6"
+        >
           <LeftDiv>
-      
-        <ReactQuill
-          theme="snow"
-          value={localQuillContent}
-          onChange={handleQuillChange}
-          placeholder={placeholder}
-          modules={modules}
-          // className="custom-quill"
-          // style={{ height: '367px', width: '59.6vw' }}
-          
-        />
+            <ArticlesSection/>
+            </LeftDiv>
+          <CenteredContainer>
 
-<CenteredContainer>
-          <CenteredButton
-        display="flex"
-        width= "10vw"
-        justifyContent="center"
-        alignItems="center"
-        background="#e74c3c"
-        overflow="hidden"
-        borderradius="10px"
-        fontSize= "14px"
-        padding = "8px 20px"
-        cursorPointer = "pointer"
-        >
-          
-        Save
-      </CenteredButton>
-        
-      <CenteredButton
-        display="flex"
-        width= "10vw"
-        justifyContent="center"
-        alignItems="center"
-        background="#e74c3c"
-        overflow="hidden"
-        borderradius="10px"
-        fontSize= "14px"
-        padding = "8px 40px"
-        cursorPointer = "pointer"
-        >
-          
-        Cancel
-      </CenteredButton>
-      </CenteredContainer>
+<CenteredButton>Save</CenteredButton>
+    
+
+              <CenteredButton
+                background="#15C39A"
+              >
+
+                Publish
+                </CenteredButton>
+              <CenteredButton
+                background="#FFFFFFD9"
+              >
+
+                Preview
+              </CenteredButton>
+            </CenteredContainer>
 
 
+</MainDiv>
+</SmallConatiner>
 
-
-        
-     
-
-          </LeftDiv>
-          
-          
-          
-
-
-          <RightDiv>
-
-          
-          </RightDiv>
-
-          
-
-        
-
-        </MainDiv>
-        
-        
-        
-
-      </SmallConatiner>
-
-
-
-
-    </DashboardContainer>
+</DashboardContainer>
   )
 }
 
