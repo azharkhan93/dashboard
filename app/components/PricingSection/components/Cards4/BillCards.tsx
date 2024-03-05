@@ -16,7 +16,11 @@ const SmallDiv = styled(Box)`
 
 const Svg = styled.div``;
 
-const TextOnRight = styled.div``;
+const TextOnRight = styled.h1`
+/* align-self: flex-end; */
+font-size: 22px;
+color: black;
+`;
 
 const FlexColumn = styled(Col)``;
 
@@ -31,9 +35,12 @@ const SvgWrapper = styled.div`
   gap: 9px;
 `;
 
-const Svg2 = styled.div``;
+const Svg2 = styled.div`
+`;
 
-const Text = styled(Headings)``;
+const Text = styled(Headings)`
+
+`;
 
 const CircleSvg = () => (
   <Svg>
@@ -94,7 +101,7 @@ export const BilCards = () => {
             display="flex"
             alignItems="center"
             justifyContent="space-between"
-            borderradius="10px"
+            borderRadius="10px"
             background="#FFFFFF"
             height="8vh"
             width="23vw"
@@ -114,7 +121,7 @@ export const BilCards = () => {
                 {card.description}
               </Text>
             </FlexColumn>
-            <TextOnRight fontHeading="20px" textColor="black">
+            <TextOnRight >
               {card.price}
             </TextOnRight>
           </SmallDiv>

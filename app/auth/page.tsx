@@ -82,7 +82,7 @@ const page = () => {
       alignItems="center"
       background="white"
       // overflow="hidden"
-      borderradius= "20px"
+      borderRadius= "20px"
       >
     
       <StyledContainer
@@ -90,7 +90,7 @@ const page = () => {
       height= "95vh"
       overflow= "hidden"
       background = "#E6E6E6"
-      borderradius = "10px">
+      borderRadius = "10px">
       <PageHeading>
       <h1>Welcome Back 👋</h1>
       <p>

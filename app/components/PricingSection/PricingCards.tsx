@@ -1,4 +1,4 @@
-import  { styled } from "styled-components"
+import   styled  from "styled-components"
 import { Row } from "../styled/Row.styled";
 import { BilCards } from "./components/Cards4";
 

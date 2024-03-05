@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { HelloWorld } from '../CustomConatiner/components/HelloWorld';
+import { NvigationSection } from './components/NavigationSection';
 
 const SidebarContainer = styled.div`
 width: 18%;
@@ -10,9 +10,10 @@ background-color: grey;
 display: flex;
 flex-direction: column;
 align-items: center;
-// justify-content: flex-start;
+
 justify-content: center;
-gap: 30px;
+gap: 10px;
+/* margin: auto; */
 
  @media (max-width: 768px) {
    display: ${(props: { isOpen: any; }) => (props.isOpen ? 'block' : 'none')};
@@ -126,8 +127,9 @@ export const SideBar = () => {
           </svg>
         </SvgWrapper>
         <EmailText>siddique@gmail.com</EmailText>
+        <NvigationSection/>
 
-        <HelloWorld/>
+        {/* <HelloWorld/> */}
         
         <BottomCircle>
           <svg width="100%" height="100%" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">

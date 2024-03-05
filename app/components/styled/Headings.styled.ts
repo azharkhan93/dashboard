@@ -1,13 +1,10 @@
 import styled from "styled-components"
 
 interface HeadingsProps {
-    flexgrow?: string;
+    flexGrow?: number;
     textColor?: string;
-    width?: string;
-    paraGraph?: string; 
-    svgItems?: string; 
-    headingFontSize?: string; 
-    paragraphFontSize?: string;
+    alignSelf?: string;
+    fontHeading?: string;
   }
 
   export const Headings = styled.div<HeadingsProps>`

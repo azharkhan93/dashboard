@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export interface BoxProps {
+export type BoxProps = {
   display?: string;
   height?: string;
   width?: string;
@@ -21,5 +21,5 @@ export const Box = styled.div<BoxProps>`
   background: ${(props) => props.background || "black"}; 
   position: ${(props) => props.position || "relative"}; 
   overflow: ${(props) => props.overflow || "visible"}; 
-  border-radius: ${(props) => props.borderradius || "0"};
+  border-radius: ${(props) => props.borderRadius || "0"};
 `; 

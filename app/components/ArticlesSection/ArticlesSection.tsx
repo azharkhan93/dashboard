@@ -44,6 +44,14 @@ export const ArticlesSection = () => {
                 onChange={handleQuillChange}
                 placeholder={placeholder}
                 modules={modules} 
+                style={{
+                  
+                  width: '100%',
+                  height: '382px',
+                  // background-color: "green",
+                  // border: '1px solid #ccc',
+                
+                }}
                 />
 
               

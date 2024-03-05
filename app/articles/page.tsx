@@ -3,8 +3,7 @@
 import styled from 'styled-components';
 import { Box } from '../components/styled/Box.styled';
 import { Headings } from '../components/styled/Headings.styled';
-import { ArticlesSection } from '../components';
-import { Buttons } from '../components/styled/Buttons.styled';
+import { ArticlesSection, CommonButton,  } from '../components';
 
 
 
@@ -34,15 +33,9 @@ position: relative;
   }
   `;
 
-const CenteredButton = styled.div`
+// const Button1 = styled(Button)`
+// background-color: #484848; 
 
-width: ${(props) => props.width || "10vw"};
-  background: ${(props) => props.background || "#484848"};
-  border-radius: ${(props) => props.borderradius || "10px"};
-  font-size: ${(props) => props.fontSize || "14px"};
-  padding: ${(props) => props.padding || "8px 20px"};
-  cursor: ${(props) => props.cursorPointer || "pointer"};
-  text-align: ${(props) => props.textAlign || "center"};
 /* width: 10vw
 padding: 8px 40px;
   background-color: #484848; 
@@ -52,7 +45,7 @@ padding: 8px 40px;
   cursor: pointer;
   font-size: 16px;
   text-align: center; */
-`;
+// `;
 
 const SvgContainer = styled(Headings)`
 position: absolute;
@@ -142,7 +135,7 @@ const page = () => {
         #E6E6E6"
         position="relative"
         overflow="hidden"
-        borderradius="10px"
+        borderRadius="10px"
 
       >
         <Container
@@ -159,6 +152,8 @@ const page = () => {
               Post Articles
             </Headings>
 
+            
+
             <Headings fontHeading="22px" textColor="black" >Create a post just by Drag & Drop elements</Headings>
 
           </Headings>
@@ -169,43 +164,56 @@ const page = () => {
           </SvgContainer>
 
 
+          {/* <StripeForm/> */}
+
+
         </Container>
         <MainDiv
-        height= "87vh"
-        width = "87vw"
-        display = "flex"
-        alignItems = "center"
-        justifyContent = "center"
-        position = "relative"
-        background = "#E6E6E6"
+          height="87vh"
+          width="87vw"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+          background="#E6E6E6"
         >
           <LeftDiv>
-            <ArticlesSection/>
-            </LeftDiv>
+            <ArticlesSection />
+          </LeftDiv>
           <CenteredContainer>
 
-<CenteredButton>Save</CenteredButton>
-    
 
-              <CenteredButton
-                background="#15C39A"
-              >
-
-                Publish
-                </CenteredButton>
-              <CenteredButton
-                background="#FFFFFFD9"
-              >
-
-                Preview
-              </CenteredButton>
-            </CenteredContainer>
+          <CommonButton>Save</CommonButton>
+          <CommonButton
+          background="#15C39A"
+          >
+            Cancel
+          </CommonButton>
+          
+          <CommonButton
+          background="green"
+          >
+            Preview
+          </CommonButton>
 
 
-</MainDiv>
-</SmallConatiner>
 
-</DashboardContainer>
+
+          {/* <CommonButton /> */}
+            {/* Save
+          </CommonButton> */}
+          
+
+            
+          </CenteredContainer>
+
+
+        </MainDiv>
+      </SmallConatiner>
+
+      {/* <AllPosts/> */}
+
+    </DashboardContainer>
   )
 }
 

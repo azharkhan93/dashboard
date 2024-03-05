@@ -36,7 +36,11 @@ const CardContainer = styled(Box)`
 `;
 
 const CardContent = styled(Col)`
-  padding: 20px;
+  padding: 9px;
+
+  @media (max-width: 767px){
+    padding: 14px;
+  }
   /* display: flex;
   flex-direction: column;
   align-items: start; */
@@ -116,9 +120,10 @@ export const StatsCards = () => {
     display=  "flex"
   alignItems= "center"
   justifyContent = "space-between"
-  height = "25vh" 
+  // height = "25vh" 
   width = "87vw"
   background ="#E6E6E6"
+  overflow= "hiddden"
   >
       {data.map((item, index) => (
         <CardContainer 
@@ -129,7 +134,7 @@ export const StatsCards = () => {
   height = "15vh" 
   width = "20vw"
   background ="white"
-  borderradius= "10px"
+  borderRadius= "10px"
         key={index}
         >
           <CardContent

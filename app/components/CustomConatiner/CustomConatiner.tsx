@@ -58,14 +58,14 @@ export const CustomConatiner = () => {
     height= "98vh"
     overflow= "hidden"
     background = "#E6E6E6"
-    borderradius = "10px"
+    borderRadius = "10px"
     >
         <Container 
         // display = "flex"
         // alignItems = "flex-start"
         // justifyContent = "space-between"
         >
-          <Headings flexGrow = "1">
+          <Headings flexGrow = {1}>
           <Headings fontHeading="24px" textColor= "black">
     Hey Siddique,
 </Headings>

@@ -156,7 +156,7 @@ const page = () => {
         #E6E6E6"
                 position="relative"
                 overflow="hidden"
-                borderradius="10px"
+                borderRadius="10px"
 
             >
                 <Container
@@ -197,7 +197,7 @@ const page = () => {
                     background="white"
                     position="relative"
                     overflow="hidden"
-                    borderradius="10px"
+                    borderRadius="10px"
                 >
                   
                   <SettingsSection/>
